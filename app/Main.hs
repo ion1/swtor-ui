@@ -15,7 +15,7 @@ layout =
       [ (T <-> B) miniMap
         [ (BL <-> BR) quickBar2{ elemNumPerRow = 6, elemOffset = (-12, 0) }
           [ (T <-> B) quickBar1{ elemNumPerRow = 6 }
-            [ (TL <-> BL) playerFrame{ elemOffset = (-125, 47) }
+            [ (TL <-> BL) playerFrame{ elemShowInfoText = True, elemOffset = (-125, 47) }
               [ (TL <-> BL) playerBuffTray{ elemIconScale = 0.6
                                           , elemBuffsSortType = ByTimeRemaining
                                           , elemShowPersonalHighlightBuffs = True
@@ -35,7 +35,8 @@ layout =
           ]
         , (BR <-> BL) quickBar4{ elemNumPerRow = 6, elemOffset = (-4, 0) }
           [ (T <-> B) quickBar3{ elemNumPerRow = 6 }
-            [ (TR <-> BR) targetFrame{ elemBuffScale = 0.6
+            [ (TR <-> BR) targetFrame{ elemShowInfoText = True
+                                     , elemBuffScale = 0.6
                                      , elemDebuffScale = 0.8
                                      , elemShowPersonalHighlightBuffs = True
                                      , elemShowPersonalHighlightDebuffs = True
@@ -54,7 +55,11 @@ layout =
           ]
         , (T <-> B) combatState{ elemOffset = (0, -30) }  -- There is text and stuff above the minimap, move this upwards.
           [ (T <-> B) tutorials
-            [ (T <-> B) targetOfTarget{ elemScale = 1.1, elemBuffScale = 0.4, elemDebuffScale = 0.5 }
+            [ (T <-> B) targetOfTarget{ elemShowInfoText = True
+                                      , elemScale = 1.1
+                                      , elemBuffScale = 0.4
+                                      , elemDebuffScale = 0.5
+                                      }
               [ (R <-> L) targetOfTargetCastbar{ elemScale = 1, elemOffset = (-20, 0) } []
               , (T <-> B) temporaryAbilityBar []
               ]
@@ -71,6 +76,7 @@ layout =
     , (BL <-> BL) companion{ elemOffset = (30, -60) }
       [ (R <-> L) companionCastBar{ elemScale = 1, elemOffset = (-80, -30) } []
       , (TL <-> BL) focusTarget{ elemScale = 0.85
+                               , elemShowInfoText = True
                                , elemBuffScale = 0.6
                                , elemDebuffScale = 0.8
                                , elemShowPersonalHighlightBuffs = True
@@ -81,12 +87,12 @@ layout =
                                , elemDebuffsSortType = ByTimeRemaining
                                }
         [ (R <-> L) focusTargetCastbar{ elemScale = 1, elemOffset = (-80, -30) } []
-        , (TL <-> BL) groupFrame1{ elemBuffScale = 0.4, elemDebuffScale = 0.5 }
-          [ (R <-> L) groupTargetFrame1{ elemBuffScale = 0.4, elemDebuffScale = 0.5 } []
-          , (TL <-> BL) groupFrame2{ elemBuffScale = 0.4, elemDebuffScale = 0.5 }
-            [ (R <-> L) groupTargetFrame2{ elemBuffScale = 0.4, elemDebuffScale = 0.5 } []
-            , (TL <-> BL) groupFrame3{ elemBuffScale = 0.4, elemDebuffScale = 0.5 }
-              [ (R <-> L) groupTargetFrame3{ elemBuffScale = 0.4, elemDebuffScale = 0.5 } []
+        , (TL <-> BL) groupFrame1{ elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 }
+          [ (R <-> L) groupTargetFrame1{ elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 } []
+          , (TL <-> BL) groupFrame2{ elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 }
+            [ (R <-> L) groupTargetFrame2{ elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 } []
+            , (TL <-> BL) groupFrame3{ elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 }
+              [ (R <-> L) groupTargetFrame3{ elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 } []
               ]
             ]
           , (BL <-> BL) operationFrames{ elemScale = 1.25

@@ -344,7 +344,7 @@
         <FlipHorizontal Type="2" Value="0"/>
         <PersonalHighlightBuffsMaxDuration Type="3" Value="300.0"/>
         <PersonalHighlightDebuffsMaxDuration Type="3" Value="300.0"/>
-        <ShowInfoText Type="2" Value="0"/>
+        <ShowInfoText Type="2" Value="1"/>
         <ShowPersonalBuffsFirst Type="2" Value="1"/>
         <ShowPersonalDebuffsFirst Type="2" Value="1"/>
         <ShowPersonalHighlightBuffs Type="2" Value="1"/>
@@ -710,7 +710,7 @@
         <BuffScale Type="3" Value="0.4"/>
         <DebuffScale Type="3" Value="0.5"/>
         <FlipHorizontal Type="2" Value="0"/>
-        <ShowInfoText Type="2" Value="0"/>
+        <ShowInfoText Type="2" Value="1"/>
         <ShowRole Type="2" Value="1"/>
         <alpha Type="3" Value="100.0"/>
         <anchorAlignment Type="3" Value="2.0"/>
@@ -723,7 +723,7 @@
         <BuffScale Type="3" Value="0.4"/>
         <DebuffScale Type="3" Value="0.5"/>
         <FlipHorizontal Type="2" Value="0"/>
-        <ShowInfoText Type="2" Value="0"/>
+        <ShowInfoText Type="2" Value="1"/>
         <ShowRole Type="2" Value="1"/>
         <alpha Type="3" Value="100.0"/>
         <anchorAlignment Type="3" Value="2.0"/>
@@ -736,7 +736,7 @@
         <BuffScale Type="3" Value="0.4"/>
         <DebuffScale Type="3" Value="0.5"/>
         <FlipHorizontal Type="2" Value="0"/>
-        <ShowInfoText Type="2" Value="0"/>
+        <ShowInfoText Type="2" Value="1"/>
         <ShowRole Type="2" Value="1"/>
         <alpha Type="3" Value="100.0"/>
         <anchorAlignment Type="3" Value="2.0"/>
@@ -750,7 +750,7 @@
         <DebuffScale Type="3" Value="0.5"/>
         <EffectsOnBottom Type="2" Value="0"/>
         <FlipHorizontal Type="2" Value="1"/>
-        <ShowInfoText Type="2" Value="0"/>
+        <ShowInfoText Type="2" Value="1"/>
         <ShowRole Type="2" Value="1"/>
         <alpha Type="3" Value="100.0"/>
         <anchorAlignment Type="3" Value="2.0"/>
@@ -764,7 +764,7 @@
         <DebuffScale Type="3" Value="0.5"/>
         <EffectsOnBottom Type="2" Value="0"/>
         <FlipHorizontal Type="2" Value="1"/>
-        <ShowInfoText Type="2" Value="0"/>
+        <ShowInfoText Type="2" Value="1"/>
         <ShowRole Type="2" Value="1"/>
         <alpha Type="3" Value="100.0"/>
         <anchorAlignment Type="3" Value="2.0"/>
@@ -778,7 +778,7 @@
         <DebuffScale Type="3" Value="0.5"/>
         <EffectsOnBottom Type="2" Value="0"/>
         <FlipHorizontal Type="2" Value="1"/>
-        <ShowInfoText Type="2" Value="0"/>
+        <ShowInfoText Type="2" Value="1"/>
         <ShowRole Type="2" Value="1"/>
         <alpha Type="3" Value="100.0"/>
         <anchorAlignment Type="3" Value="2.0"/>
@@ -825,7 +825,7 @@
         <DebuffScale Type="3" Value="0.6"/>
         <EffectsOnBottom Type="2" Value="0"/>
         <FlipHorizontal Type="2" Value="0"/>
-        <ShowInfoText Type="2" Value="0"/>
+        <ShowInfoText Type="2" Value="1"/>
         <ShowRole Type="2" Value="1"/>
         <alpha Type="3" Value="100.0"/>
         <anchorAlignment Type="3" Value="8.0"/>
@@ -1096,7 +1096,7 @@
         <DebuffScale Type="3" Value="0.5"/>
         <EffectsOnBottom Type="2" Value="0"/>
         <FlipHorizontal Type="2" Value="1"/>
-        <ShowInfoText Type="2" Value="0"/>
+        <ShowInfoText Type="2" Value="1"/>
         <ShowRole Type="2" Value="1"/>
         <alpha Type="3" Value="100.0"/>
         <anchorAlignment Type="3" Value="8.0"/>
@@ -1123,7 +1123,7 @@
         <FlipHorizontal Type="2" Value="1"/>
         <PersonalHighlightBuffsMaxDuration Type="3" Value="300.0"/>
         <PersonalHighlightDebuffsMaxDuration Type="3" Value="300.0"/>
-        <ShowInfoText Type="2" Value="0"/>
+        <ShowInfoText Type="2" Value="1"/>
         <ShowNoCharacter Type="2" Value="1"/>
         <ShowPersonalBuffsFirst Type="2" Value="1"/>
         <ShowPersonalDebuffsFirst Type="2" Value="1"/>
