@@ -70,8 +70,8 @@ layout =
     , (TR <-> TR) missionTracker{ elemScale = 0.9, elemHeight = 650/0.9 } []
     , (BR <-> BR) achievementTracker{ elemHeight = 650, elemOffset = (0, -24) } []
     , (BR <-> BR) largeTooltip{ elemAttachToMiniMap = False, elemOffset = (0, -100) } []
-    , (C <-> BR) playerCastbar{ elemOffset = (-100, -100) } []
-    , (C <-> BL) targetCastbar{ elemOffset = ( 100, -100) } []
+    , (C <-> BR) playerCastbar{ elemScale = 1.25, elemOffset = (-100, -100) } []
+    , (C <-> BL) targetCastbar{ elemScale = 1.25, elemOffset = ( 100, -100) } []
     , (C <-> B) systemMessages{ elemScale = 1.25, elemOffset = (0, -250) } []
     , (BL <-> BL) companion{ elemOffset = (30, -60) }
       [ (R <-> L) companionCastBar{ elemScale = 1, elemOffset = (-80, -30) } []

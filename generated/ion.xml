@@ -799,10 +799,10 @@
         <FlipHorizontal Type="2" Value="1"/>
         <alpha Type="3" Value="100.0"/>
         <anchorAlignment Type="3" Value="9.0"/>
-        <anchorXOffset Type="3" Value="-231.0"/>
-        <anchorYOffset Type="3" Value="-115.0"/>
+        <anchorXOffset Type="3" Value="-263.75"/>
+        <anchorYOffset Type="3" Value="-118.75"/>
         <enabled Type="2" Value="1"/>
-        <scale Type="3" Value="1.0"/>
+        <scale Type="3" Value="1.25"/>
     </PlayerCastbar>
     <PlayerNegativeEffectTray>
         <TrayExpandsHorizontal Type="2" Value="0"/>
@@ -1086,10 +1086,10 @@
         <FlipHorizontal Type="2" Value="0"/>
         <alpha Type="3" Value="100.0"/>
         <anchorAlignment Type="3" Value="9.0"/>
-        <anchorXOffset Type="3" Value="231.0"/>
-        <anchorYOffset Type="3" Value="-115.0"/>
+        <anchorXOffset Type="3" Value="263.75"/>
+        <anchorYOffset Type="3" Value="-118.75"/>
         <enabled Type="2" Value="1"/>
-        <scale Type="3" Value="1.0"/>
+        <scale Type="3" Value="1.25"/>
     </TargetCastbar>
     <TargetOfTarget>
         <BuffScale Type="3" Value="0.4"/>
