@@ -2,9 +2,10 @@ name: swtor-ui
 version: 0.1.0.0
 synopsis: Star Wars: The Old Republic user interface layout generator
 description:
-  Describe how SWTOR UI elements are anchored to the screen and each other
-  programmatically and generate a UI profile as an alternative to moving each
-  element to the desired position manually in the SWTOR UI editor.
+  Specify how SWTOR UI elements are anchored to the screen and to each other
+  and generate a UI profile to be loaded by the game. This is an alternative to
+  the in-game interface editor which does not have any functionality to align
+  elements with each other or move them as a group.
 homepage: https://github.com/ion1/swtor-ui#readme
 license: MIT
 license-file: LICENSE
