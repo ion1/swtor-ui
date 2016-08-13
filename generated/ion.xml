@@ -717,7 +717,7 @@
         <anchorXOffset Type="3" Value="30.0"/>
         <anchorYOffset Type="3" Value="-290.6"/>
         <enabled Type="2" Value="1"/>
-        <scale Type="3" Value="1.0"/>
+        <scale Type="3" Value="1.2"/>
     </PartyFrame1>
     <PartyFrame2>
         <BuffScale Type="3" Value="0.4"/>
@@ -728,9 +728,9 @@
         <alpha Type="3" Value="100.0"/>
         <anchorAlignment Type="3" Value="2.0"/>
         <anchorXOffset Type="3" Value="30.0"/>
-        <anchorYOffset Type="3" Value="-413.6"/>
+        <anchorYOffset Type="3" Value="-438.20000000000005"/>
         <enabled Type="2" Value="1"/>
-        <scale Type="3" Value="1.0"/>
+        <scale Type="3" Value="1.2"/>
     </PartyFrame2>
     <PartyFrame3>
         <BuffScale Type="3" Value="0.4"/>
@@ -741,9 +741,9 @@
         <alpha Type="3" Value="100.0"/>
         <anchorAlignment Type="3" Value="2.0"/>
         <anchorXOffset Type="3" Value="30.0"/>
-        <anchorYOffset Type="3" Value="-536.6"/>
+        <anchorYOffset Type="3" Value="-585.8000000000001"/>
         <enabled Type="2" Value="1"/>
-        <scale Type="3" Value="1.0"/>
+        <scale Type="3" Value="1.2"/>
     </PartyFrame3>
     <PartyTargetFrame1>
         <BuffScale Type="3" Value="0.4"/>
@@ -754,10 +754,10 @@
         <ShowRole Type="2" Value="1"/>
         <alpha Type="3" Value="100.0"/>
         <anchorAlignment Type="3" Value="2.0"/>
-        <anchorXOffset Type="3" Value="290.0"/>
-        <anchorYOffset Type="3" Value="-325.85"/>
+        <anchorXOffset Type="3" Value="342.0"/>
+        <anchorYOffset Type="3" Value="-329.40000000000003"/>
         <enabled Type="2" Value="1"/>
-        <scale Type="3" Value="0.75"/>
+        <scale Type="3" Value="1.0"/>
     </PartyTargetFrame1>
     <PartyTargetFrame2>
         <BuffScale Type="3" Value="0.4"/>
@@ -768,10 +768,10 @@
         <ShowRole Type="2" Value="1"/>
         <alpha Type="3" Value="100.0"/>
         <anchorAlignment Type="3" Value="2.0"/>
-        <anchorXOffset Type="3" Value="290.0"/>
-        <anchorYOffset Type="3" Value="-448.85"/>
+        <anchorXOffset Type="3" Value="342.0"/>
+        <anchorYOffset Type="3" Value="-477.0"/>
         <enabled Type="2" Value="1"/>
-        <scale Type="3" Value="0.75"/>
+        <scale Type="3" Value="1.0"/>
     </PartyTargetFrame2>
     <PartyTargetFrame3>
         <BuffScale Type="3" Value="0.4"/>
@@ -782,10 +782,10 @@
         <ShowRole Type="2" Value="1"/>
         <alpha Type="3" Value="100.0"/>
         <anchorAlignment Type="3" Value="2.0"/>
-        <anchorXOffset Type="3" Value="290.0"/>
-        <anchorYOffset Type="3" Value="-571.85"/>
+        <anchorXOffset Type="3" Value="342.0"/>
+        <anchorYOffset Type="3" Value="-624.6000000000001"/>
         <enabled Type="2" Value="1"/>
-        <scale Type="3" Value="0.75"/>
+        <scale Type="3" Value="1.0"/>
     </PartyTargetFrame3>
     <PhaseIndicator>
         <alpha Type="3" Value="100.0"/>
@@ -1103,14 +1103,14 @@
         <anchorXOffset Type="3" Value="0.0"/>
         <anchorYOffset Type="3" Value="-368.20000000000005"/>
         <enabled Type="2" Value="1"/>
-        <scale Type="3" Value="1.1"/>
+        <scale Type="3" Value="1.25"/>
     </TargetOfTarget>
     <TargetOfTargetCastbar>
         <FlipHorizontal Type="2" Value="1"/>
         <alpha Type="3" Value="100.0"/>
         <anchorAlignment Type="3" Value="8.0"/>
-        <anchorXOffset Type="3" Value="230.89999999999998"/>
-        <anchorYOffset Type="3" Value="-391.70000000000005"/>
+        <anchorXOffset Type="3" Value="247.25"/>
+        <anchorYOffset Type="3" Value="-396.95000000000005"/>
         <enabled Type="2" Value="1"/>
         <scale Type="3" Value="1.0"/>
     </TargetOfTargetCastbar>
@@ -1146,7 +1146,7 @@
         <alpha Type="3" Value="100.0"/>
         <anchorAlignment Type="3" Value="8.0"/>
         <anchorXOffset Type="3" Value="0.0"/>
-        <anchorYOffset Type="3" Value="-445.20000000000005"/>
+        <anchorYOffset Type="3" Value="-455.70000000000005"/>
         <enabled Type="2" Value="1"/>
         <scale Type="3" Value="1.0"/>
     </TemporaryAbilityBar>

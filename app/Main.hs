@@ -56,7 +56,7 @@ layout =
         , (T <-> B) combatState{ elemOffset = (0, -30) }  -- There is text and stuff above the minimap, move this upwards.
           [ (T <-> B) tutorials
             [ (T <-> B) targetOfTarget{ elemShowInfoText = True
-                                      , elemScale = 1.1
+                                      , elemScale = 1.25
                                       , elemBuffScale = 0.4
                                       , elemDebuffScale = 0.5
                                       }
@@ -87,12 +87,12 @@ layout =
                                , elemDebuffsSortType = ByTimeRemaining
                                }
         [ (R <-> L) focusTargetCastbar{ elemScale = 1, elemOffset = (-80, -30) } []
-        , (TL <-> BL) groupFrame1{ elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 }
-          [ (R <-> L) groupTargetFrame1{ elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 } []
-          , (TL <-> BL) groupFrame2{ elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 }
-            [ (R <-> L) groupTargetFrame2{ elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 } []
-            , (TL <-> BL) groupFrame3{ elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 }
-              [ (R <-> L) groupTargetFrame3{ elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 } []
+        , (TL <-> BL) groupFrame1{ elemScale = 1.2, elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 }
+          [ (R <-> L) groupTargetFrame1{ elemScale = 1.0, elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 } []
+          , (TL <-> BL) groupFrame2{ elemScale = 1.2, elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 }
+            [ (R <-> L) groupTargetFrame2{ elemScale = 1.0, elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 } []
+            , (TL <-> BL) groupFrame3{ elemScale = 1.2, elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 }
+              [ (R <-> L) groupTargetFrame3{ elemScale = 1.0, elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 } []
               ]
             ]
           , (BL <-> BL) operationFrames{ elemScale = 1.25
