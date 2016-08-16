@@ -87,11 +87,11 @@ layout =
                                , elemDebuffsSortType = ByTimeRemaining
                                }
         [ (R <-> L) focusTargetCastbar{ elemScale = 1, elemOffset = (-80, -30) } []
-        , (TL <-> BL) groupFrame1{ elemScale = 1.2, elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 }
+        , (TL <-> BL) groupFrame1{ elemScale = 1.25, elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 }
           [ (R <-> L) groupTargetFrame1{ elemScale = 1.0, elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 } []
-          , (TL <-> BL) groupFrame2{ elemScale = 1.2, elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 }
+          , (TL <-> BL) groupFrame2{ elemScale = 1.25, elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 }
             [ (R <-> L) groupTargetFrame2{ elemScale = 1.0, elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 } []
-            , (TL <-> BL) groupFrame3{ elemScale = 1.2, elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 }
+            , (TL <-> BL) groupFrame3{ elemScale = 1.25, elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 }
               [ (R <-> L) groupTargetFrame3{ elemScale = 1.0, elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 } []
               ]
             ]
@@ -108,8 +108,8 @@ layout =
         ]
       ]
     , (TL <-> TL) socialCenter
-      [ (BL <-> TL) chatPanel2{ elemSize = (800, 200) }
-        [ (BL <-> TL) chatPanel1{ elemSize = (800, 200) }
+      [ (BL <-> TL) chatPanel2{ elemSize = (800, 190) }
+        [ (BL <-> TL) chatPanel1{ elemSize = (800, 190) }
           [ (BL <-> TL) socialNotifications{ elemOffset = (30, 0) }
             []
           ]
