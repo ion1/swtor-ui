@@ -17,12 +17,14 @@ layout =
           [ (T <-> B) quickBar1{ elemNumPerRow = 6 }
             [ (TL <-> BL) playerFrame{ elemShowInfoText = True, elemOffset = (-125, 47) }
               [ (TL <-> BL) playerBuffTray{ elemIconScale = 0.6
+                                          , elemNumPerRow = 20
                                           , elemBuffsSortType = ByTimeRemaining
                                           , elemShowPersonalHighlightBuffs = True
                                           , elemShowPersonalBuffsFirst = True
                                           , elemOffset = (118, 19)
                                           }
                 [ (TL <-> BL) playerDebuffTray{ elemIconScale = 0.8
+                                              , elemNumPerRow = 15
                                               , elemDebuffsSortType = ByTimeRemaining
                                               , elemShowPersonalHighlightDebuffs = True
                                               , elemShowPersonalDebuffsFirst = True

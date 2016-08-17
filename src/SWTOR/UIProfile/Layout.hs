@@ -221,6 +221,7 @@ data Element = AchievementTracker { elemScale :: Double  -- ^ Default: 1
                               }
              | PlayerBuffTray { elemScale :: Double  -- ^ Default: 1
                               , elemIconScale :: Double  -- ^ Default: 0.6
+                              , elemNumPerRow :: Integer  -- ^ Default: 5
                               , elemBuffsSortType :: EffectSortType  -- ^ Default: ApplyTime
                               , elemShowPersonalHighlightBuffs :: Bool  -- ^ Default: False
                               , elemPersonalHighlightBuffsMaxDuration :: Double  -- ^ Default: 300
@@ -233,6 +234,7 @@ data Element = AchievementTracker { elemScale :: Double  -- ^ Default: 1
                              }
              | PlayerDebuffTray { elemScale :: Double  -- ^ Default: 1
                                 , elemIconScale :: Double  -- ^ Default: 0.6
+                                , elemNumPerRow :: Integer  -- ^ Default: 5
                                 , elemDebuffsSortType :: EffectSortType  -- ^ Default: ApplyTime
                                 , elemShowPersonalHighlightDebuffs :: Bool  -- ^ Default: False
                                 , elemPersonalHighlightDebuffsMaxDuration :: Double  -- ^ Default: 300
@@ -532,6 +534,7 @@ phaseIndicator = PhaseIndicator{ elemScale = 1
                                }
 playerBuffTray = PlayerBuffTray{ elemScale = 1
                                , elemIconScale = 0.6
+                               , elemNumPerRow = 5
                                , elemBuffsSortType = ApplyTime
                                , elemShowPersonalHighlightBuffs = False
                                , elemPersonalHighlightBuffsMaxDuration = 300
@@ -544,6 +547,7 @@ playerCastbar = PlayerCastbar{ elemScale = 1
                              }
 playerDebuffTray = PlayerDebuffTray{ elemScale = 1
                                    , elemIconScale = 0.6
+                                   , elemNumPerRow = 5
                                    , elemDebuffsSortType = ApplyTime
                                    , elemShowPersonalHighlightDebuffs = False
                                    , elemPersonalHighlightDebuffsMaxDuration = 300
