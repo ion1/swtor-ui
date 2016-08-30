@@ -1092,8 +1092,8 @@
         <scale Type="3" Value="1.25"/>
     </TargetCastbar>
     <TargetOfTarget>
-        <BuffScale Type="3" Value="0.4"/>
-        <DebuffScale Type="3" Value="0.5"/>
+        <BuffScale Type="3" Value="0.25"/>
+        <DebuffScale Type="3" Value="0.4"/>
         <EffectsOnBottom Type="2" Value="0"/>
         <FlipHorizontal Type="2" Value="1"/>
         <ShowInfoText Type="2" Value="1"/>

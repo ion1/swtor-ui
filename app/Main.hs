@@ -59,8 +59,8 @@ layout =
           [ (T <-> B) tutorials
             [ (T <-> B) targetOfTarget{ elemShowInfoText = True
                                       , elemScale = 1.25
-                                      , elemBuffScale = 0.4
-                                      , elemDebuffScale = 0.5
+                                      , elemBuffScale = 0.25
+                                      , elemDebuffScale = 0.4
                                       }
               [ (R <-> L) targetOfTargetCastbar{ elemScale = 1, elemOffset = (-20, 0) } []
               , (T <-> B) temporaryAbilityBar []
