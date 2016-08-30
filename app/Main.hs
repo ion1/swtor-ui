@@ -62,7 +62,7 @@ layout =
                                       , elemBuffScale = 0.25
                                       , elemDebuffScale = 0.4
                                       }
-              [ (R <-> L) targetOfTargetCastbar{ elemScale = 1, elemOffset = (-20, 0) } []
+              [ (R <-> L) targetOfTargetCastbar{ elemScale = 1, elemFlipHorizontal = False, elemOffset = (-20, 0) } []
               , (T <-> B) temporaryAbilityBar []
               ]
             ]
@@ -73,7 +73,9 @@ layout =
     , (BR <-> BR) achievementTracker{ elemHeight = 650, elemOffset = (0, -24) } []
     , (BR <-> BR) largeTooltip{ elemAttachToMiniMap = False, elemOffset = (0, -100) } []
     , (C <-> BR) playerCastbar{ elemScale = 1.25, elemOffset = (-100, -100) } []
-    , (C <-> BL) targetCastbar{ elemScale = 1.25, elemOffset = ( 100, -100) } []
+    , (C <-> BL) targetCastbar{ elemScale = 1.25, elemOffset = ( 100, -100) }
+      [ (R <-> L) focusTargetCastbar{ elemScale = 1.25, elemFlipHorizontal = False } []
+      ]
     , (C <-> B) systemMessages{ elemScale = 1.25, elemOffset = (0, -250) } []
     , (BL <-> BL) companion{ elemOffset = (30, -60) }
       [ (R <-> L) companionCastBar{ elemScale = 1, elemOffset = (-80, -30) } []
@@ -88,8 +90,7 @@ layout =
                                , elemShowPersonalDebuffsFirst = True
                                , elemDebuffsSortType = ByTimeRemaining
                                }
-        [ (R <-> L) focusTargetCastbar{ elemScale = 1, elemOffset = (-80, -30) } []
-        , (TL <-> BL) groupFrame1{ elemScale = 1.25, elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 }
+        [ (TL <-> BL) groupFrame1{ elemScale = 1.25, elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 }
           [ (R <-> L) groupTargetFrame1{ elemScale = 1.0, elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 } []
           , (TL <-> BL) groupFrame2{ elemScale = 1.25, elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 }
             [ (R <-> L) groupTargetFrame2{ elemScale = 1.0, elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 } []
