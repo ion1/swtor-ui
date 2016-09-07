@@ -23,13 +23,7 @@ layout =
                                           , elemShowPersonalBuffsFirst = True
                                           , elemOffset = (118, 19)
                                           }
-                [ (TL <-> BL) playerDebuffTray{ elemIconScale = 0.8
-                                              , elemNumPerRow = 15
-                                              , elemDebuffsSortType = ByTimeRemaining
-                                              , elemShowPersonalHighlightDebuffs = True
-                                              , elemShowPersonalDebuffsFirst = True
-                                              }
-                  []
+                [
                 ]
                 , (TL <-> B) holocom []
               ]
@@ -72,7 +66,17 @@ layout =
     , (TR <-> TR) missionTracker{ elemScale = 0.9, elemHeight = 650/0.9 } []
     , (BR <-> BR) achievementTracker{ elemHeight = 650, elemOffset = (0, -24) } []
     , (BR <-> BR) largeTooltip{ elemAttachToMiniMap = False, elemOffset = (0, -100) } []
-    , (C <-> BR) playerCastbar{ elemScale = 1.25, elemOffset = (-100, -100) } []
+    , (C <-> BR) playerCastbar{ elemScale = 1.25, elemOffset = (-100, -100) }
+      [ (BL <-> TL) playerDebuffTray{ elemScale = 1.25
+                                    , elemIconScale = 0.8
+                                    , elemNumPerRow = 5
+                                    , elemDebuffsSortType = ByTimeRemaining
+                                    , elemShowPersonalHighlightDebuffs = True
+                                    , elemShowPersonalDebuffsFirst = True
+                                    , elemOffset = (0, 150)
+                                    }
+        []
+      ]
     , (C <-> BL) targetCastbar{ elemScale = 1.25, elemOffset = ( 100, -100) }
       [ (R <-> L) focusTargetCastbar{ elemScale = 1.25, elemFlipHorizontal = False } []
       ]
