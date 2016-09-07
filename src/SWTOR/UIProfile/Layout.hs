@@ -6,6 +6,7 @@ module SWTOR.UIProfile.Layout
 , LayoutPrim (..), (<->)
 , layoutPrimParentAlignment
 , Alignment (..), EffectSortType (..)
+, ExpandVertical (..), ExpandHorizontal (..)
 , Element (..)
 , achievementTracker, cartelMarket, chatPanel1, chatPanel2, chatPanel3
 , chatPanel4, chatPanel5, chatPanel6, chatPanel7, chatPanel8, chatPanel9
@@ -46,6 +47,12 @@ data Alignment = TL {- ^ Top left  -} | BL {- ^ Bottom left  -} | L {- ^ Left  -
   deriving (Eq, Ord, Enum, Bounded, Show, Read)
 
 data EffectSortType = ApplyTime | TotalDuration | ByTimeRemaining
+  deriving (Eq, Ord, Enum, Bounded, Show, Read)
+
+data ExpandVertical = ExpandDown | ExpandUp
+  deriving (Eq, Ord, Enum, Bounded, Show, Read)
+
+data ExpandHorizontal = ExpandLeft | ExpandRight
   deriving (Eq, Ord, Enum, Bounded, Show, Read)
 
 data Element = AchievementTracker { elemScale :: Double  -- ^ Default: 1
@@ -222,6 +229,8 @@ data Element = AchievementTracker { elemScale :: Double  -- ^ Default: 1
              | PlayerBuffTray { elemScale :: Double  -- ^ Default: 1
                               , elemIconScale :: Double  -- ^ Default: 0.6
                               , elemNumPerRow :: Integer  -- ^ Default: 5
+                              , elemExpandVertical :: ExpandVertical  -- ^ Default: ExpandUp
+                              , elemExpandHorizontal :: ExpandHorizontal  -- ^ Default: ExpandRight
                               , elemBuffsSortType :: EffectSortType  -- ^ Default: ApplyTime
                               , elemShowPersonalHighlightBuffs :: Bool  -- ^ Default: False
                               , elemPersonalHighlightBuffsMaxDuration :: Double  -- ^ Default: 300
@@ -235,6 +244,8 @@ data Element = AchievementTracker { elemScale :: Double  -- ^ Default: 1
              | PlayerDebuffTray { elemScale :: Double  -- ^ Default: 1
                                 , elemIconScale :: Double  -- ^ Default: 0.6
                                 , elemNumPerRow :: Integer  -- ^ Default: 5
+                                , elemExpandVertical :: ExpandVertical  -- ^ Default: ExpandUp
+                                , elemExpandHorizontal :: ExpandHorizontal  -- ^ Default: ExpandLeft
                                 , elemDebuffsSortType :: EffectSortType  -- ^ Default: ApplyTime
                                 , elemShowPersonalHighlightDebuffs :: Bool  -- ^ Default: False
                                 , elemPersonalHighlightDebuffsMaxDuration :: Double  -- ^ Default: 300
@@ -535,6 +546,8 @@ phaseIndicator = PhaseIndicator{ elemScale = 1
 playerBuffTray = PlayerBuffTray{ elemScale = 1
                                , elemIconScale = 0.6
                                , elemNumPerRow = 5
+                               , elemExpandVertical = ExpandUp
+                               , elemExpandHorizontal = ExpandRight
                                , elemBuffsSortType = ApplyTime
                                , elemShowPersonalHighlightBuffs = False
                                , elemPersonalHighlightBuffsMaxDuration = 300
@@ -548,6 +561,8 @@ playerCastbar = PlayerCastbar{ elemScale = 1
 playerDebuffTray = PlayerDebuffTray{ elemScale = 1
                                    , elemIconScale = 0.6
                                    , elemNumPerRow = 5
+                                   , elemExpandVertical = ExpandUp
+                                   , elemExpandHorizontal = ExpandLeft
                                    , elemDebuffsSortType = ApplyTime
                                    , elemShowPersonalHighlightDebuffs = False
                                    , elemPersonalHighlightDebuffsMaxDuration = 300

@@ -313,6 +313,8 @@ elementToXMLElement' PlayerBuffTray{..} =
       , ("enabled", XMLBool True)
       , ("TrayIconsScale", XMLDouble elemIconScale)
       , ("TrayMaxColumns", XMLDouble (fromIntegral elemNumPerRow))
+      , ("TrayExpandsVertical", XMLBool (expandVerticalBool elemExpandVertical))
+      , ("TrayExpandsHorizontal", XMLBool (expandHorizontalBool elemExpandHorizontal))
       , ("TraySortType", XMLDouble (effectSortTypeNumber elemBuffsSortType))
       , ("TrayShowPersonalHighlight", XMLBool elemShowPersonalHighlightBuffs)
       , ("TrayPersonalHighlightMaxDuration", XMLDouble elemPersonalHighlightBuffsMaxDuration)
@@ -330,6 +332,8 @@ elementToXMLElement' PlayerDebuffTray{..} =
       , ("enabled", XMLBool True)
       , ("TrayIconsScale", XMLDouble elemIconScale)
       , ("TrayMaxColumns", XMLDouble (fromIntegral elemNumPerRow))
+      , ("TrayExpandsVertical", XMLBool (expandVerticalBool elemExpandVertical))
+      , ("TrayExpandsHorizontal", XMLBool (expandHorizontalBool elemExpandHorizontal))
       , ("TraySortType", XMLDouble (effectSortTypeNumber elemDebuffsSortType))
       , ("TrayShowPersonalHighlight", XMLBool elemShowPersonalHighlightDebuffs)
       , ("TrayPersonalHighlightMaxDuration", XMLDouble elemPersonalHighlightDebuffsMaxDuration)
@@ -479,3 +483,11 @@ effectSortTypeNumber est =
     ApplyTime       -> 0
     TotalDuration   -> 1
     ByTimeRemaining -> 2
+
+expandVerticalBool :: ExpandVertical -> Bool
+expandVerticalBool ExpandDown = False
+expandVerticalBool ExpandUp   = True
+
+expandHorizontalBool :: ExpandHorizontal -> Bool
+expandHorizontalBool ExpandLeft  = False
+expandHorizontalBool ExpandRight = True
