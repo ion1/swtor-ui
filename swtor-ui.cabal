@@ -30,6 +30,7 @@ executable swtor-ui-generate-default
   main-is: GenerateDefault.hs
   ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
   build-depends: base >= 4.8 && < 5
+               , pretty-show
                , swtor-ui
   default-language: Haskell2010
 

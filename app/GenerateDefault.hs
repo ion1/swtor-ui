@@ -3,6 +3,8 @@
 
 module Main (main) where
 
+import Text.Show.Pretty
+
 import SWTOR.UIProfile
 import SWTOR.UIProfile.XMLSerialization
 
@@ -20,5 +22,5 @@ main = do
     , "import Data.Map"
     , "import SWTOR.UIProfile.XMLSerialization"
     , "defaultXMLProfile :: XMLProfile"
-    , "defaultXMLProfile = " ++ show prof
+    , "defaultXMLProfile = " ++ ppShow prof
     ]
