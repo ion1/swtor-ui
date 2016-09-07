@@ -13,16 +13,16 @@ import Data.List
 import SWTOR.UIProfile.Layout
 
 data Placement = Placement{ placAlign   :: Alignment
-                          , placPos     :: (Double, Double)
+                          , placPos     :: (Rational, Rational)
                           , placBounds  :: Bounds
                           , placElement :: Element
                           }
   deriving (Eq, Ord, Show, Read)
 
-data Bounds = Bounds{ boundsL :: Double
-                    , boundsT :: Double
-                    , boundsR :: Double
-                    , boundsB :: Double
+data Bounds = Bounds{ boundsL :: Rational
+                    , boundsT :: Rational
+                    , boundsR :: Rational
+                    , boundsB :: Rational
                     }
   deriving (Eq, Ord, Show, Read)
 
@@ -79,7 +79,7 @@ connect (parentAlign, parent) (childAlign, child) =
         B  -> (-0.5 * w, -h)
         C  -> (-0.5 * w, -0.5 * h)
 
-boundsAnchor :: Alignment -> Bounds -> (Double, Double)
+boundsAnchor :: Alignment -> Bounds -> (Rational, Rational)
 boundsAnchor al Bounds{..} =
   case al of
     TL -> (boundsL, boundsT)

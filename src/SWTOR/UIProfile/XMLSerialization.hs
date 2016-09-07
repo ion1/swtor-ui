@@ -7,7 +7,7 @@
 module SWTOR.UIProfile.XMLSerialization
 ( XMLProfile (..), _XMLProfile
 , XMLElement (..), _XMLElement
-, XMLProperty (..), _XMLBool, _XMLDouble
+, XMLProperty (..), _XMLBool, _XMLReal
 , readProfile, writeProfile
 , xmlPropertyType
 ) where
@@ -33,7 +33,7 @@ data XMLElement = XMLElement (M.Map T.Text XMLProperty)
   deriving (Eq, Ord, Read, Show, Generic, NFData)
 
 data XMLProperty = XMLBool Bool
-                 | XMLDouble Double
+                 | XMLReal Double
   deriving (Eq, Ord, Read, Show, Generic, NFData)
 
 makePrisms ''XMLProfile
@@ -77,7 +77,7 @@ parseProperty = X.tag localName validateAttrs $ \(name, typ, value) ->
       | value == "1" = pure (XMLBool True)
       | otherwise = throwM $ X.XmlException ("Invalid boolean for " ++ show name ++ ": " ++ show value) Nothing
     go name "3" value
-      | [(n, "")] <- (reads . T.unpack) value = pure (XMLDouble n)
+      | [(n, "")] <- (reads . T.unpack) value = pure (XMLReal n)
       | otherwise = throwM $ X.XmlException ("Invalid number for " ++ show name ++ ": " ++ show value) Nothing
     go name typ value =
       throwM $ X.XmlException ("Unrecognized Type for " ++ show name ++ ": " ++ show typ ++ "(Value: " ++ show value ++ ")") Nothing
@@ -106,9 +106,9 @@ renderProperty name prop =
     attrs = M.fromList [("Type", xmlPropertyType prop), ("Value", valueAttr)]
     valueAttr =
       case prop of
-        XMLBool   b -> if b then "1" else "0"
-        XMLDouble n -> (T.pack . show) n
+        XMLBool b -> if b then "1" else "0"
+        XMLReal n -> (T.pack . show) n
 
 xmlPropertyType :: XMLProperty -> T.Text
-xmlPropertyType XMLBool{}   = "2"
-xmlPropertyType XMLDouble{} = "3"
+xmlPropertyType XMLBool{} = "2"
+xmlPropertyType XMLReal{} = "3"

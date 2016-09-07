@@ -35,9 +35,12 @@ updateProp el (name, prop)
            ++ show oldProp ++ " -> " ++ show prop
   | otherwise = error $ "Internal error: property " ++ show name ++ " does not exist"
 
+xmlReal :: Real n => n -> XMLProperty
+xmlReal n = XMLReal (realToFrac n)
+
 globalsToXMLElement :: Globals -> (T.Text, XMLElement)
 globalsToXMLElement Globals{..} =
-  ("Global", XMLElement (M.singleton "GlobalScale" (XMLDouble globScale)))
+  ("Global", XMLElement (M.singleton "GlobalScale" (xmlReal globScale)))
 
 placementToXMLElement :: Placement -> (T.Text, XMLElement)
 placementToXMLElement Placement{..} =
@@ -45,9 +48,9 @@ placementToXMLElement Placement{..} =
     (name, props) -> (name, XMLElement (M.fromList (props ++ alignProps)))
   where
     alignProps =
-      [ ("anchorAlignment", XMLDouble (alignmentNumber placAlign))
-      , (if isWindow then "anchorOffsetX" else "anchorXOffset", XMLDouble (fst placPos))
-      , (if isWindow then "anchorOffsetY" else "anchorYOffset", XMLDouble (snd placPos))
+      [ ("anchorAlignment", xmlReal (alignmentNumber placAlign))
+      , (if isWindow then "anchorOffsetX" else "anchorXOffset", xmlReal (fst placPos))
+      , (if isWindow then "anchorOffsetY" else "anchorYOffset", xmlReal (snd placPos))
       ]
     isWindow | ChatPanel1{}  <- placElement = True
              | ChatPanel2{}  <- placElement = True
@@ -64,284 +67,284 @@ placementToXMLElement Placement{..} =
 elementToXMLElement' :: Element -> (T.Text, [(T.Text, XMLProperty)])
 elementToXMLElement' AchievementTracker{..} =
   (,) "AchievementTracker"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       , ("FlippedVertically", XMLBool elemFlipVertical)
-      , ("Height", XMLDouble elemHeight)
+      , ("Height", xmlReal elemHeight)
       ]
 elementToXMLElement' CartelMarket{..} =
   (,) "MTXStorePanel"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       ]
 elementToXMLElement' ChatPanel1{..} =
   (,) "ChatPanel_1"
-      [ ("width", XMLDouble (fst elemSize))
-      , ("height", XMLDouble (snd elemSize))
-      , ("FontSize", XMLDouble elemFontSize)
+      [ ("width", xmlReal (fst elemSize))
+      , ("height", xmlReal (snd elemSize))
+      , ("FontSize", xmlReal elemFontSize)
       ]
 elementToXMLElement' ChatPanel2{..} =
   (,) "ChatPanel_2"
       [ ("isPanel", XMLBool True)
-      , ("width", XMLDouble (fst elemSize))
-      , ("height", XMLDouble (snd elemSize))
-      , ("FontSize", XMLDouble elemFontSize)
+      , ("width", xmlReal (fst elemSize))
+      , ("height", xmlReal (snd elemSize))
+      , ("FontSize", xmlReal elemFontSize)
       ]
 elementToXMLElement' ChatPanel3{..} =
   (,) "ChatPanel_3"
       [ ("isPanel", XMLBool True)
-      , ("width", XMLDouble (fst elemSize))
-      , ("height", XMLDouble (snd elemSize))
-      , ("FontSize", XMLDouble elemFontSize)
+      , ("width", xmlReal (fst elemSize))
+      , ("height", xmlReal (snd elemSize))
+      , ("FontSize", xmlReal elemFontSize)
       ]
 elementToXMLElement' ChatPanel4{..} =
   (,) "ChatPanel_4"
       [ ("isPanel", XMLBool True)
-      , ("width", XMLDouble (fst elemSize))
-      , ("height", XMLDouble (snd elemSize))
-      , ("FontSize", XMLDouble elemFontSize)
+      , ("width", xmlReal (fst elemSize))
+      , ("height", xmlReal (snd elemSize))
+      , ("FontSize", xmlReal elemFontSize)
       ]
 elementToXMLElement' ChatPanel5{..} =
   (,) "ChatPanel_5"
       [ ("isPanel", XMLBool True)
-      , ("width", XMLDouble (fst elemSize))
-      , ("height", XMLDouble (snd elemSize))
-      , ("FontSize", XMLDouble elemFontSize)
+      , ("width", xmlReal (fst elemSize))
+      , ("height", xmlReal (snd elemSize))
+      , ("FontSize", xmlReal elemFontSize)
       ]
 elementToXMLElement' ChatPanel6{..} =
   (,) "ChatPanel_6"
       [ ("isPanel", XMLBool True)
-      , ("width", XMLDouble (fst elemSize))
-      , ("height", XMLDouble (snd elemSize))
-      , ("FontSize", XMLDouble elemFontSize)
+      , ("width", xmlReal (fst elemSize))
+      , ("height", xmlReal (snd elemSize))
+      , ("FontSize", xmlReal elemFontSize)
       ]
 elementToXMLElement' ChatPanel7{..} =
   (,) "ChatPanel_7"
       [ ("isPanel", XMLBool True)
-      , ("width", XMLDouble (fst elemSize))
-      , ("height", XMLDouble (snd elemSize))
-      , ("FontSize", XMLDouble elemFontSize)
+      , ("width", xmlReal (fst elemSize))
+      , ("height", xmlReal (snd elemSize))
+      , ("FontSize", xmlReal elemFontSize)
       ]
 elementToXMLElement' ChatPanel8{..} =
   (,) "ChatPanel_8"
       [ ("isPanel", XMLBool True)
-      , ("width", XMLDouble (fst elemSize))
-      , ("height", XMLDouble (snd elemSize))
-      , ("FontSize", XMLDouble elemFontSize)
+      , ("width", xmlReal (fst elemSize))
+      , ("height", xmlReal (snd elemSize))
+      , ("FontSize", xmlReal elemFontSize)
       ]
 elementToXMLElement' ChatPanel9{..} =
   (,) "ChatPanel_9"
       [ ("isPanel", XMLBool True)
-      , ("width", XMLDouble (fst elemSize))
-      , ("height", XMLDouble (snd elemSize))
-      , ("FontSize", XMLDouble elemFontSize)
+      , ("width", xmlReal (fst elemSize))
+      , ("height", xmlReal (snd elemSize))
+      , ("FontSize", xmlReal elemFontSize)
       ]
 elementToXMLElement' ChatPanel10{..} =
   (,) "ChatPanel_10"
       [ ("isPanel", XMLBool True)
-      , ("width", XMLDouble (fst elemSize))
-      , ("height", XMLDouble (snd elemSize))
-      , ("FontSize", XMLDouble elemFontSize)
+      , ("width", xmlReal (fst elemSize))
+      , ("height", xmlReal (snd elemSize))
+      , ("FontSize", xmlReal elemFontSize)
       ]
 elementToXMLElement' CombatState{..} =
   (,) "CombatState"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       ]
 elementToXMLElement' Companion{..} =
   (,) "Companion"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       ]
 elementToXMLElement' CompanionCastbar{..} =
   (,) "CompanionCastbar"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       , ("FlipHorizontal", XMLBool elemFlipHorizontal)
       ]
 elementToXMLElement' ExperienceBars{..} =
   (,) "ExperienceBars"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       , ("ShowXP", XMLBool elemShowXP)
       , ("ShowLegacyXP", XMLBool elemShowLegacyXP)
       ]
 elementToXMLElement' FocusTarget{..} =
   (,) "FocusTarget"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       , ("FlipHorizontal", XMLBool elemFlipHorizontal)
       , ("ShowInfoText", XMLBool elemShowInfoText)
-      , ("BuffScale", XMLDouble elemBuffScale)
-      , ("DebuffScale", XMLDouble elemDebuffScale)
+      , ("BuffScale", xmlReal elemBuffScale)
+      , ("DebuffScale", xmlReal elemDebuffScale)
       , ("ShowPersonalHighlightBuffs", XMLBool elemShowPersonalHighlightBuffs)
-      , ("PersonalHighlightBuffsMaxDuration", XMLDouble elemPersonalHighlightBuffsMaxDuration)
+      , ("PersonalHighlightBuffsMaxDuration", xmlReal elemPersonalHighlightBuffsMaxDuration)
       , ("ShowPersonalHighlightDebuffs", XMLBool elemShowPersonalHighlightDebuffs)
-      , ("PersonalHighlightDebuffsMaxDuration", XMLDouble elemPersonalHighlightDebuffsMaxDuration)
+      , ("PersonalHighlightDebuffsMaxDuration", xmlReal elemPersonalHighlightDebuffsMaxDuration)
       , ("ShowPersonalBuffsFirst", XMLBool elemShowPersonalBuffsFirst)
-      , ("BuffsSortType", XMLDouble (effectSortTypeNumber elemBuffsSortType))
+      , ("BuffsSortType", xmlReal (effectSortTypeNumber elemBuffsSortType))
       , ("ShowPersonalDebuffsFirst", XMLBool elemShowPersonalDebuffsFirst)
-      , ("DebuffsSortType", XMLDouble (effectSortTypeNumber elemDebuffsSortType))
+      , ("DebuffsSortType", xmlReal (effectSortTypeNumber elemDebuffsSortType))
       ]
 elementToXMLElement' FocusTargetCastbar{..} =
   (,) "FocusTargetCastbar"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       , ("FlipHorizontal", XMLBool elemFlipHorizontal)
       ]
 elementToXMLElement' GameDownload{..} =
   (,) "GameDownload"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       ]
 elementToXMLElement' GroupFrame1{..} =
   (,) "PartyFrame1"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       , ("FlipHorizontal", XMLBool elemFlipHorizontal)
       , ("ShowInfoText", XMLBool elemShowInfoText)
       , ("ShowRole", XMLBool elemShowRole)
-      , ("BuffScale", XMLDouble elemBuffScale)
-      , ("DebuffScale", XMLDouble elemDebuffScale)
+      , ("BuffScale", xmlReal elemBuffScale)
+      , ("DebuffScale", xmlReal elemDebuffScale)
       ]
 elementToXMLElement' GroupFrame2{..} =
   (,) "PartyFrame2"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       , ("FlipHorizontal", XMLBool elemFlipHorizontal)
       , ("ShowInfoText", XMLBool elemShowInfoText)
       , ("ShowRole", XMLBool elemShowRole)
-      , ("BuffScale", XMLDouble elemBuffScale)
-      , ("DebuffScale", XMLDouble elemDebuffScale)
+      , ("BuffScale", xmlReal elemBuffScale)
+      , ("DebuffScale", xmlReal elemDebuffScale)
       ]
 elementToXMLElement' GroupFrame3{..} =
   (,) "PartyFrame3"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       , ("FlipHorizontal", XMLBool elemFlipHorizontal)
       , ("ShowInfoText", XMLBool elemShowInfoText)
       , ("ShowRole", XMLBool elemShowRole)
-      , ("BuffScale", XMLDouble elemBuffScale)
-      , ("DebuffScale", XMLDouble elemDebuffScale)
+      , ("BuffScale", xmlReal elemBuffScale)
+      , ("DebuffScale", xmlReal elemDebuffScale)
       ]
 elementToXMLElement' GroupTargetFrame1{..} =
   (,) "PartyTargetFrame1"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       , ("FlipHorizontal", XMLBool elemFlipHorizontal)
       , ("ShowInfoText", XMLBool elemShowInfoText)
       , ("EffectsOnBottom", XMLBool elemEffectsOnBottom)
       , ("ShowRole", XMLBool elemShowRole)
-      , ("BuffScale", XMLDouble elemBuffScale)
-      , ("DebuffScale", XMLDouble elemDebuffScale)
+      , ("BuffScale", xmlReal elemBuffScale)
+      , ("DebuffScale", xmlReal elemDebuffScale)
       ]
 elementToXMLElement' GroupTargetFrame2{..} =
   (,) "PartyTargetFrame2"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       , ("FlipHorizontal", XMLBool elemFlipHorizontal)
       , ("ShowInfoText", XMLBool elemShowInfoText)
       , ("EffectsOnBottom", XMLBool elemEffectsOnBottom)
       , ("ShowRole", XMLBool elemShowRole)
-      , ("BuffScale", XMLDouble elemBuffScale)
-      , ("DebuffScale", XMLDouble elemDebuffScale)
+      , ("BuffScale", xmlReal elemBuffScale)
+      , ("DebuffScale", xmlReal elemDebuffScale)
       ]
 elementToXMLElement' GroupTargetFrame3{..} =
   (,) "PartyTargetFrame3"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       , ("FlipHorizontal", XMLBool elemFlipHorizontal)
       , ("ShowInfoText", XMLBool elemShowInfoText)
       , ("EffectsOnBottom", XMLBool elemEffectsOnBottom)
       , ("ShowRole", XMLBool elemShowRole)
-      , ("BuffScale", XMLDouble elemBuffScale)
-      , ("DebuffScale", XMLDouble elemDebuffScale)
+      , ("BuffScale", xmlReal elemBuffScale)
+      , ("DebuffScale", xmlReal elemDebuffScale)
       ]
 elementToXMLElement' Holocom{..} =
   (,) "Holocom"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       ]
 elementToXMLElement' LargeTooltip{..} =
   (,) "LargeTooltip"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       , ("GrowUp", XMLBool elemGrowUp)
       , ("UseDockedStyle", XMLBool elemAttachToMiniMap)
       ]
 elementToXMLElement' MenuBar{..} =
   (,) "MenuBar"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
-      , ("NumPerRow", XMLDouble (fromInteger elemNumPerRow))
+      , ("NumPerRow", xmlReal elemNumPerRow)
       ]
 elementToXMLElement' MiniMap{..} =
   (,) "MiniMap"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       , ("FlipVertically", XMLBool elemFlipVertical)
       ]
 elementToXMLElement' MissionTracker{..} =
   (,) "MissionTracker"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       , ("FlippedVertically", XMLBool elemFlipVertical)
-      , ("Height", XMLDouble elemHeight)
+      , ("Height", xmlReal elemHeight)
       ]
 elementToXMLElement' OperationFrames{..} =
   (,) "RaidFrames"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
-      , ("NumPerRow", XMLDouble (fromIntegral elemNumPerRow))
-      , ("GroupsVisible", XMLDouble (fromIntegral elemNumVisible))
-      , ("HealthWidth", XMLDouble (fst elemHealthSize))
-      , ("HealthHeight", XMLDouble (snd elemHealthSize))
+      , ("NumPerRow", xmlReal elemNumPerRow)
+      , ("GroupsVisible", xmlReal elemNumVisible)
+      , ("HealthWidth", xmlReal (fst elemHealthSize))
+      , ("HealthHeight", xmlReal (snd elemHealthSize))
       , ("ShowHealth", XMLBool elemShowHealth)
-      , ("BuffScale", XMLDouble elemBuffScale)
-      , ("DebuffScale", XMLDouble elemDebuffScale)
-      , ("PartySpacing", XMLDouble elemPartySpacing)
+      , ("BuffScale", xmlReal elemBuffScale)
+      , ("DebuffScale", xmlReal elemDebuffScale)
+      , ("PartySpacing", xmlReal elemPartySpacing)
       , ("ShowOnlyCleansableDebuffs", XMLBool elemShowOnlyCleansableDebuffs)
       ]
 elementToXMLElement' PhaseIndicator{..} =
   (,) "PhaseIndicator"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       ]
 elementToXMLElement' PlayerBuffTray{..} =
   (,) "PlayerPositiveEffectTray"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
-      , ("TrayIconsScale", XMLDouble elemIconScale)
-      , ("TrayMaxColumns", XMLDouble (fromIntegral elemNumPerRow))
+      , ("TrayIconsScale", xmlReal elemIconScale)
+      , ("TrayMaxColumns", xmlReal elemNumPerRow)
       , ("TrayExpandsVertical", XMLBool (expandVerticalBool elemExpandVertical))
       , ("TrayExpandsHorizontal", XMLBool (expandHorizontalBool elemExpandHorizontal))
-      , ("TraySortType", XMLDouble (effectSortTypeNumber elemBuffsSortType))
+      , ("TraySortType", xmlReal (effectSortTypeNumber elemBuffsSortType))
       , ("TrayShowPersonalHighlight", XMLBool elemShowPersonalHighlightBuffs)
-      , ("TrayPersonalHighlightMaxDuration", XMLDouble elemPersonalHighlightBuffsMaxDuration)
+      , ("TrayPersonalHighlightMaxDuration", xmlReal elemPersonalHighlightBuffsMaxDuration)
       , ("TrayShowPersonalEffectsFirst", XMLBool elemShowPersonalBuffsFirst)
       ]
 elementToXMLElement' PlayerCastbar{..} =
   (,) "PlayerCastbar"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       , ("FlipHorizontal", XMLBool elemFlipHorizontal)
       ]
 elementToXMLElement' PlayerDebuffTray{..} =
   (,) "PlayerNegativeEffectTray"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
-      , ("TrayIconsScale", XMLDouble elemIconScale)
-      , ("TrayMaxColumns", XMLDouble (fromIntegral elemNumPerRow))
+      , ("TrayIconsScale", xmlReal elemIconScale)
+      , ("TrayMaxColumns", xmlReal elemNumPerRow)
       , ("TrayExpandsVertical", XMLBool (expandVerticalBool elemExpandVertical))
       , ("TrayExpandsHorizontal", XMLBool (expandHorizontalBool elemExpandHorizontal))
-      , ("TraySortType", XMLDouble (effectSortTypeNumber elemDebuffsSortType))
+      , ("TraySortType", xmlReal (effectSortTypeNumber elemDebuffsSortType))
       , ("TrayShowPersonalHighlight", XMLBool elemShowPersonalHighlightDebuffs)
-      , ("TrayPersonalHighlightMaxDuration", XMLDouble elemPersonalHighlightDebuffsMaxDuration)
+      , ("TrayPersonalHighlightMaxDuration", xmlReal elemPersonalHighlightDebuffsMaxDuration)
       , ("TrayShowPersonalEffectsFirst", XMLBool elemShowPersonalDebuffsFirst)
       ]
 elementToXMLElement' PlayerFrame{..} =
   (,) "PlayerPortrait"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       , ("FlipHorizontal", XMLBool elemFlipHorizontal)
       , ("ShowInfoText", XMLBool elemShowInfoText)
@@ -350,121 +353,121 @@ elementToXMLElement' PlayerFrame{..} =
       ]
 elementToXMLElement' QuickBar1{..} =
   (,) "QuickBar1"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
-      , ("NumVisible", XMLDouble (fromInteger elemNumVisible))
-      , ("NumPerRow", XMLDouble (fromInteger elemNumPerRow))
+      , ("NumVisible", xmlReal elemNumVisible)
+      , ("NumPerRow", xmlReal elemNumPerRow)
       , ("BGVisible", XMLBool elemBGVisible)
       ]
 elementToXMLElement' QuickBar2{..} =
   (,) "QuickBar2"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
-      , ("NumVisible", XMLDouble (fromInteger elemNumVisible))
-      , ("NumPerRow", XMLDouble (fromInteger elemNumPerRow))
+      , ("NumVisible", xmlReal elemNumVisible)
+      , ("NumPerRow", xmlReal elemNumPerRow)
       , ("BGVisible", XMLBool elemBGVisible)
       ]
 elementToXMLElement' QuickBar3{..} =
   (,) "QuickBar3"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
-      , ("NumVisible", XMLDouble (fromInteger elemNumVisible))
-      , ("NumPerRow", XMLDouble (fromInteger elemNumPerRow))
+      , ("NumVisible", xmlReal elemNumVisible)
+      , ("NumPerRow", xmlReal elemNumPerRow)
       , ("BGVisible", XMLBool elemBGVisible)
       ]
 elementToXMLElement' QuickBar4{..} =
   (,) "QuickBar4"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
-      , ("NumVisible", XMLDouble (fromInteger elemNumVisible))
-      , ("NumPerRow", XMLDouble (fromInteger elemNumPerRow))
+      , ("NumVisible", xmlReal elemNumVisible)
+      , ("NumPerRow", xmlReal elemNumPerRow)
       , ("BGVisible", XMLBool elemBGVisible)
       ]
 elementToXMLElement' QuickBar5{..} =
   (,) "QuickBar5"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
-      , ("NumVisible", XMLDouble (fromInteger elemNumVisible))
-      , ("NumPerRow", XMLDouble (fromInteger elemNumPerRow))
+      , ("NumVisible", xmlReal elemNumVisible)
+      , ("NumPerRow", xmlReal elemNumPerRow)
       , ("BGVisible", XMLBool elemBGVisible)
       ]
 elementToXMLElement' QuickBar6{..} =
   (,) "QuickBar6"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
-      , ("NumVisible", XMLDouble (fromInteger elemNumVisible))
-      , ("NumPerRow", XMLDouble (fromInteger elemNumPerRow))
+      , ("NumVisible", xmlReal elemNumVisible)
+      , ("NumPerRow", xmlReal elemNumPerRow)
       , ("BGVisible", XMLBool elemBGVisible)
       ]
 elementToXMLElement' SocialCenter{..} =
   (,) "SocialCenter"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       ]
 elementToXMLElement' SocialNotifications{..} =
   (,) "SocialNotifications"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       ]
 elementToXMLElement' SystemMessages{..} =
   (,) "SystemMessages"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       ]
 elementToXMLElement' TargetCastbar{..} =
   (,) "TargetCastbar"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("FlipHorizontal", XMLBool elemFlipHorizontal)
       ]
 elementToXMLElement' TargetFrame{..} =
   (,) "TargetPortrait"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       , ("FlipHorizontal", XMLBool elemFlipHorizontal)
       , ("EffectsOnBottom", XMLBool elemEffectsOnBottom)
       , ("ShowNoCharacter", XMLBool elemDisplayWithNoTarget)
       , ("ShowInfoText", XMLBool elemShowInfoText)
       , ("ShowRole", XMLBool elemShowRole)
-      , ("BuffScale", XMLDouble elemBuffScale)
-      , ("DebuffScale", XMLDouble elemDebuffScale)
+      , ("BuffScale", xmlReal elemBuffScale)
+      , ("DebuffScale", xmlReal elemDebuffScale)
       , ("ShowPersonalHighlightBuffs", XMLBool elemShowPersonalHighlightBuffs)
-      , ("PersonalHighlightBuffsMaxDuration", XMLDouble elemPersonalHighlightBuffsMaxDuration)
+      , ("PersonalHighlightBuffsMaxDuration", xmlReal elemPersonalHighlightBuffsMaxDuration)
       , ("ShowPersonalHighlightDebuffs", XMLBool elemShowPersonalHighlightDebuffs)
-      , ("PersonalHighlightDebuffsMaxDuration", XMLDouble elemPersonalHighlightDebuffsMaxDuration)
+      , ("PersonalHighlightDebuffsMaxDuration", xmlReal elemPersonalHighlightDebuffsMaxDuration)
       , ("ShowPersonalBuffsFirst", XMLBool elemShowPersonalBuffsFirst)
-      , ("BuffsSortType", XMLDouble (effectSortTypeNumber elemBuffsSortType))
+      , ("BuffsSortType", xmlReal (effectSortTypeNumber elemBuffsSortType))
       , ("ShowPersonalDebuffsFirst", XMLBool elemShowPersonalDebuffsFirst)
-      , ("DebuffsSortType", XMLDouble (effectSortTypeNumber elemDebuffsSortType))
+      , ("DebuffsSortType", xmlReal (effectSortTypeNumber elemDebuffsSortType))
       ]
 elementToXMLElement' TargetOfTarget{..} =
   (,) "TargetOfTarget"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       , ("FlipHorizontal", XMLBool elemFlipHorizontal)
       , ("ShowInfoText", XMLBool elemShowInfoText)
       , ("EffectsOnBottom", XMLBool elemEffectsOnBottom)
-      , ("BuffScale", XMLDouble elemBuffScale)
-      , ("DebuffScale", XMLDouble elemDebuffScale)
+      , ("BuffScale", xmlReal elemBuffScale)
+      , ("DebuffScale", xmlReal elemDebuffScale)
       , ("ShowRole", XMLBool elemShowRole)
       ]
 elementToXMLElement' TargetOfTargetCastbar{..} =
   (,) "TargetOfTargetCastbar"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       , ("FlipHorizontal", XMLBool elemFlipHorizontal)
       ]
 elementToXMLElement' TemporaryAbilityBar{..} =
   (,) "TemporaryAbilityBar"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       ]
 elementToXMLElement' Tutorials{..} =
   (,) "Tutorials"
-      [ ("scale", XMLDouble elemScale)
+      [ ("scale", xmlReal elemScale)
       , ("enabled", XMLBool True)
       ]
 
-alignmentNumber :: Num n => Alignment -> n
+alignmentNumber :: Alignment -> Integer
 alignmentNumber al =
   case al of
     TL -> 1
@@ -477,7 +480,7 @@ alignmentNumber al =
     B  -> 8
     C  -> 9
 
-effectSortTypeNumber :: Num n => EffectSortType -> n
+effectSortTypeNumber :: EffectSortType -> Integer
 effectSortTypeNumber est =
   case est of
     ApplyTime       -> 0

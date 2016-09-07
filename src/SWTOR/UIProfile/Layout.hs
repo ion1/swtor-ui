@@ -28,7 +28,7 @@ data Layout = Screen { scrGlobals :: Globals
                      }
   deriving (Eq, Ord, Show, Read)
 
-data Globals = Globals { globScale :: Double }
+data Globals = Globals { globScale :: Rational }
   deriving (Eq, Ord, Show, Read)
 
 data LayoutPrim = Anchor { lyParentAlign :: Alignment
@@ -55,295 +55,295 @@ data ExpandVertical = ExpandDown | ExpandUp
 data ExpandHorizontal = ExpandLeft | ExpandRight
   deriving (Eq, Ord, Enum, Bounded, Show, Read)
 
-data Element = AchievementTracker { elemScale :: Double  -- ^ Default: 1
+data Element = AchievementTracker { elemScale :: Rational  -- ^ Default: 1
                                   , elemFlipVertical :: Bool  -- ^ Default: True
-                                  , elemHeight :: Double  -- ^ Default: 295
-                                  , elemOffset :: (Double, Double)
+                                  , elemHeight :: Rational  -- ^ Default: 295
+                                  , elemOffset :: (Rational, Rational)
                                   }
-             | CartelMarket { elemScale :: Double  -- ^ Default: 1
-                            , elemOffset :: (Double, Double)
+             | CartelMarket { elemScale :: Rational  -- ^ Default: 1
+                            , elemOffset :: (Rational, Rational)
                             }
-             | ChatPanel1  { elemSize :: (Double, Double)  -- ^ Default: (400,200), minimum: (400,185), maximum: (800,500)
-                           , elemFontSize :: Double        -- ^ Default: 14
-                           , elemOffset :: (Double, Double)
+             | ChatPanel1  { elemSize :: (Rational, Rational)  -- ^ Default: (400,200), minimum: (400,185), maximum: (800,500)
+                           , elemFontSize :: Rational        -- ^ Default: 14
+                           , elemOffset :: (Rational, Rational)
                            }
-             | ChatPanel2  { elemSize :: (Double, Double)  -- ^ Default: (400,200), minimum: (400,185), maximum: (800,500)
-                           , elemFontSize :: Double        -- ^ Default: 14
-                           , elemOffset :: (Double, Double)
+             | ChatPanel2  { elemSize :: (Rational, Rational)  -- ^ Default: (400,200), minimum: (400,185), maximum: (800,500)
+                           , elemFontSize :: Rational        -- ^ Default: 14
+                           , elemOffset :: (Rational, Rational)
                            }
-             | ChatPanel3  { elemSize :: (Double, Double)  -- ^ Default: (400,200), minimum: (400,185), maximum: (800,500)
-                           , elemFontSize :: Double        -- ^ Default: 14
-                           , elemOffset :: (Double, Double)
+             | ChatPanel3  { elemSize :: (Rational, Rational)  -- ^ Default: (400,200), minimum: (400,185), maximum: (800,500)
+                           , elemFontSize :: Rational        -- ^ Default: 14
+                           , elemOffset :: (Rational, Rational)
                            }
-             | ChatPanel4  { elemSize :: (Double, Double)  -- ^ Default: (400,200), minimum: (400,185), maximum: (800,500)
-                           , elemFontSize :: Double        -- ^ Default: 14
-                           , elemOffset :: (Double, Double)
+             | ChatPanel4  { elemSize :: (Rational, Rational)  -- ^ Default: (400,200), minimum: (400,185), maximum: (800,500)
+                           , elemFontSize :: Rational        -- ^ Default: 14
+                           , elemOffset :: (Rational, Rational)
                            }
-             | ChatPanel5  { elemSize :: (Double, Double)  -- ^ Default: (400,200), minimum: (400,185), maximum: (800,500)
-                           , elemFontSize :: Double        -- ^ Default: 14
-                           , elemOffset :: (Double, Double)
+             | ChatPanel5  { elemSize :: (Rational, Rational)  -- ^ Default: (400,200), minimum: (400,185), maximum: (800,500)
+                           , elemFontSize :: Rational        -- ^ Default: 14
+                           , elemOffset :: (Rational, Rational)
                            }
-             | ChatPanel6  { elemSize :: (Double, Double)  -- ^ Default: (400,200), minimum: (400,185), maximum: (800,500)
-                           , elemFontSize :: Double        -- ^ Default: 14
-                           , elemOffset :: (Double, Double)
+             | ChatPanel6  { elemSize :: (Rational, Rational)  -- ^ Default: (400,200), minimum: (400,185), maximum: (800,500)
+                           , elemFontSize :: Rational        -- ^ Default: 14
+                           , elemOffset :: (Rational, Rational)
                            }
-             | ChatPanel7  { elemSize :: (Double, Double)  -- ^ Default: (400,200), minimum: (400,185), maximum: (800,500)
-                           , elemFontSize :: Double        -- ^ Default: 14
-                           , elemOffset :: (Double, Double)
+             | ChatPanel7  { elemSize :: (Rational, Rational)  -- ^ Default: (400,200), minimum: (400,185), maximum: (800,500)
+                           , elemFontSize :: Rational        -- ^ Default: 14
+                           , elemOffset :: (Rational, Rational)
                            }
-             | ChatPanel8  { elemSize :: (Double, Double)  -- ^ Default: (400,200), minimum: (400,185), maximum: (800,500)
-                           , elemFontSize :: Double        -- ^ Default: 14
-                           , elemOffset :: (Double, Double)
+             | ChatPanel8  { elemSize :: (Rational, Rational)  -- ^ Default: (400,200), minimum: (400,185), maximum: (800,500)
+                           , elemFontSize :: Rational        -- ^ Default: 14
+                           , elemOffset :: (Rational, Rational)
                            }
-             | ChatPanel9  { elemSize :: (Double, Double)  -- ^ Default: (400,200), minimum: (400,185), maximum: (800,500)
-                           , elemFontSize :: Double        -- ^ Default: 14
-                           , elemOffset :: (Double, Double)
+             | ChatPanel9  { elemSize :: (Rational, Rational)  -- ^ Default: (400,200), minimum: (400,185), maximum: (800,500)
+                           , elemFontSize :: Rational        -- ^ Default: 14
+                           , elemOffset :: (Rational, Rational)
                            }
-             | ChatPanel10 { elemSize :: (Double, Double)  -- ^ Default: (400,200), minimum: (400,185), maximum: (800,500)
-                           , elemFontSize :: Double        -- ^ Default: 14
-                           , elemOffset :: (Double, Double)
+             | ChatPanel10 { elemSize :: (Rational, Rational)  -- ^ Default: (400,200), minimum: (400,185), maximum: (800,500)
+                           , elemFontSize :: Rational        -- ^ Default: 14
+                           , elemOffset :: (Rational, Rational)
                            }
-             | CombatState { elemScale :: Double  -- ^ Default: 1
-                           , elemOffset :: (Double, Double)
+             | CombatState { elemScale :: Rational  -- ^ Default: 1
+                           , elemOffset :: (Rational, Rational)
                            }
-             | Companion { elemScale :: Double  -- ^ Default: 1
-                         , elemOffset :: (Double, Double)
+             | Companion { elemScale :: Rational  -- ^ Default: 1
+                         , elemOffset :: (Rational, Rational)
                          }
-             | CompanionCastbar { elemScale :: Double  -- ^ Default: 1
+             | CompanionCastbar { elemScale :: Rational  -- ^ Default: 1
                                 , elemFlipHorizontal :: Bool    -- ^ Default: False
-                                , elemOffset :: (Double, Double)
+                                , elemOffset :: (Rational, Rational)
                                 }
-             | ExperienceBars { elemScale        :: Double  -- ^ Default: 1
+             | ExperienceBars { elemScale        :: Rational  -- ^ Default: 1
                               , elemShowXP       :: Bool    -- ^ Default: True
                               , elemShowLegacyXP :: Bool    -- ^ Default: True
-                              , elemOffset :: (Double, Double)
+                              , elemOffset :: (Rational, Rational)
                               }
-             | FocusTarget { elemScale :: Double  -- ^ Default: 0.8
+             | FocusTarget { elemScale :: Rational  -- ^ Default: 0.8
                            , elemFlipHorizontal :: Bool  -- ^ Default: False
                            , elemShowInfoText :: Bool  -- ^ Default: False
-                           , elemBuffScale :: Double  -- ^ Default: 0.6
-                           , elemDebuffScale :: Double  -- ^ Default: 0.6
+                           , elemBuffScale :: Rational  -- ^ Default: 0.6
+                           , elemDebuffScale :: Rational  -- ^ Default: 0.6
                            , elemShowPersonalHighlightBuffs :: Bool  -- ^ Default: False
-                           , elemPersonalHighlightBuffsMaxDuration :: Double  -- ^ Default: 300
+                           , elemPersonalHighlightBuffsMaxDuration :: Rational  -- ^ Default: 300
                            , elemShowPersonalHighlightDebuffs :: Bool  -- ^ Default: False
-                           , elemPersonalHighlightDebuffsMaxDuration :: Double -- ^ Default: 300
+                           , elemPersonalHighlightDebuffsMaxDuration :: Rational -- ^ Default: 300
                            , elemShowPersonalBuffsFirst :: Bool  -- ^ Default: False
                            , elemBuffsSortType :: EffectSortType  -- ^ Default: ApplyTime
                            , elemShowPersonalDebuffsFirst :: Bool  -- ^ Default: False
                            , elemDebuffsSortType :: EffectSortType  -- ^ Default: ApplyTime
-                           , elemOffset :: (Double, Double)
+                           , elemOffset :: (Rational, Rational)
                            }
-             | FocusTargetCastbar { elemScale :: Double  -- ^ Default: 0.9
+             | FocusTargetCastbar { elemScale :: Rational  -- ^ Default: 0.9
                                   , elemFlipHorizontal :: Bool  -- ^ Default: False
-                                  , elemOffset :: (Double, Double)
+                                  , elemOffset :: (Rational, Rational)
                                   }
-             | GameDownload { elemScale :: Double  -- ^ Default: 1
-                            , elemOffset :: (Double, Double)
+             | GameDownload { elemScale :: Rational  -- ^ Default: 1
+                            , elemOffset :: (Rational, Rational)
                             }
-             | GroupFrame1 { elemScale :: Double  -- ^ Default: 1
+             | GroupFrame1 { elemScale :: Rational  -- ^ Default: 1
                            , elemFlipHorizontal :: Bool  -- ^ Default: False
                            , elemShowInfoText :: Bool  -- ^ Default: False
                            , elemShowRole :: Bool  -- ^ Default: True
-                           , elemBuffScale :: Double  -- ^ Default: 0.35
-                           , elemDebuffScale :: Double  -- ^ Default: 0.35
-                           , elemOffset :: (Double, Double)
+                           , elemBuffScale :: Rational  -- ^ Default: 0.35
+                           , elemDebuffScale :: Rational  -- ^ Default: 0.35
+                           , elemOffset :: (Rational, Rational)
                            }
-             | GroupFrame2 { elemScale :: Double  -- ^ Default: 1
+             | GroupFrame2 { elemScale :: Rational  -- ^ Default: 1
                            , elemFlipHorizontal :: Bool  -- ^ Default: False
                            , elemShowInfoText :: Bool  -- ^ Default: False
                            , elemShowRole :: Bool  -- ^ Default: True
-                           , elemBuffScale :: Double  -- ^ Default: 0.35
-                           , elemDebuffScale :: Double  -- ^ Default: 0.35
-                           , elemOffset :: (Double, Double)
+                           , elemBuffScale :: Rational  -- ^ Default: 0.35
+                           , elemDebuffScale :: Rational  -- ^ Default: 0.35
+                           , elemOffset :: (Rational, Rational)
                            }
-             | GroupFrame3 { elemScale :: Double  -- ^ Default: 1
+             | GroupFrame3 { elemScale :: Rational  -- ^ Default: 1
                            , elemFlipHorizontal :: Bool  -- ^ Default: False
                            , elemShowInfoText :: Bool  -- ^ Default: False
                            , elemShowRole :: Bool  -- ^ Default: True
-                           , elemBuffScale :: Double  -- ^ Default: 0.35
-                           , elemDebuffScale :: Double  -- ^ Default: 0.35
-                           , elemOffset :: (Double, Double)
+                           , elemBuffScale :: Rational  -- ^ Default: 0.35
+                           , elemDebuffScale :: Rational  -- ^ Default: 0.35
+                           , elemOffset :: (Rational, Rational)
                            }
-             | GroupTargetFrame1 { elemScale :: Double  -- ^ Default: 0.75
+             | GroupTargetFrame1 { elemScale :: Rational  -- ^ Default: 0.75
                                  , elemFlipHorizontal :: Bool  -- ^ Default: True
                                  , elemShowInfoText :: Bool  -- ^ Default: False
                                  , elemEffectsOnBottom :: Bool  -- ^ Default: False
                                  , elemShowRole :: Bool  -- ^ Default: True
-                                 , elemBuffScale :: Double  -- ^ Default: 0.25
-                                 , elemDebuffScale :: Double  -- ^ Default: 0.25
-                                 , elemOffset :: (Double, Double)
+                                 , elemBuffScale :: Rational  -- ^ Default: 0.25
+                                 , elemDebuffScale :: Rational  -- ^ Default: 0.25
+                                 , elemOffset :: (Rational, Rational)
                                  }
-             | GroupTargetFrame2 { elemScale :: Double  -- ^ Default: 0.75
+             | GroupTargetFrame2 { elemScale :: Rational  -- ^ Default: 0.75
                                  , elemFlipHorizontal :: Bool  -- ^ Default: True
                                  , elemShowInfoText :: Bool  -- ^ Default: False
                                  , elemEffectsOnBottom :: Bool  -- ^ Default: False
                                  , elemShowRole :: Bool  -- ^ Default: True
-                                 , elemBuffScale :: Double  -- ^ Default: 0.25
-                                 , elemDebuffScale :: Double  -- ^ Default: 0.25
-                                 , elemOffset :: (Double, Double)
+                                 , elemBuffScale :: Rational  -- ^ Default: 0.25
+                                 , elemDebuffScale :: Rational  -- ^ Default: 0.25
+                                 , elemOffset :: (Rational, Rational)
                                  }
-             | GroupTargetFrame3 { elemScale :: Double  -- ^ Default: 0.75
+             | GroupTargetFrame3 { elemScale :: Rational  -- ^ Default: 0.75
                                  , elemFlipHorizontal :: Bool  -- ^ Default: True
                                  , elemShowInfoText :: Bool  -- ^ Default: False
                                  , elemEffectsOnBottom :: Bool  -- ^ Default: False
                                  , elemShowRole :: Bool  -- ^ Default: True
-                                 , elemBuffScale :: Double  -- ^ Default: 0.25
-                                 , elemDebuffScale :: Double  -- ^ Default: 0.25
-                                 , elemOffset :: (Double, Double)
+                                 , elemBuffScale :: Rational  -- ^ Default: 0.25
+                                 , elemDebuffScale :: Rational  -- ^ Default: 0.25
+                                 , elemOffset :: (Rational, Rational)
                                  }
-             | Holocom { elemScale :: Double  -- ^ Default: 1
-                       , elemOffset :: (Double, Double)
+             | Holocom { elemScale :: Rational  -- ^ Default: 1
+                       , elemOffset :: (Rational, Rational)
                        }
-             | LargeTooltip { elemScale :: Double  -- ^ Default: 0.9 from mini-map's scale
+             | LargeTooltip { elemScale :: Rational  -- ^ Default: 0.9 from mini-map's scale
                             , elemAttachToMiniMap :: Bool  -- ^ Default: True
                             , elemGrowUp :: Bool  -- ^ Default: True
-                            , elemOffset :: (Double, Double)
+                            , elemOffset :: (Rational, Rational)
                             }
-             | MenuBar { elemScale :: Double  -- ^ Default: 1
+             | MenuBar { elemScale :: Rational  -- ^ Default: 1
                        , elemNumPerRow :: Integer -- ^ Default: 13
-                       , elemOffset :: (Double, Double)
+                       , elemOffset :: (Rational, Rational)
                        }
-             | MiniMap { elemScale :: Double  -- ^ Default: 0.9
+             | MiniMap { elemScale :: Rational  -- ^ Default: 0.9
                        , elemFlipVertical :: Bool  -- ^ Default: False
-                       , elemOffset :: (Double, Double)
+                       , elemOffset :: (Rational, Rational)
                        }
-             | MissionTracker { elemScale :: Double  -- ^ Default: 1
+             | MissionTracker { elemScale :: Rational  -- ^ Default: 1
                               , elemFlipVertical :: Bool  -- ^ Default: False
-                              , elemHeight :: Double  -- ^ Default: 500
-                              , elemOffset :: (Double, Double)
+                              , elemHeight :: Rational  -- ^ Default: 500
+                              , elemOffset :: (Rational, Rational)
                               }
-             | OperationFrames { elemScale :: Double  -- ^ Default: 1
+             | OperationFrames { elemScale :: Rational  -- ^ Default: 1
                                , elemNumPerRow :: Integer  -- ^ Default: 3
                                , elemNumVisible :: Integer  -- ^ Default: 6
-                               , elemHealthSize :: (Double, Double)  -- ^ Default: (102,4)
+                               , elemHealthSize :: (Rational, Rational)  -- ^ Default: (102,4)
                                , elemShowHealth :: Bool  -- ^ Default: False
-                               , elemBuffScale :: Double  -- ^ Default: 0.22
-                               , elemDebuffScale :: Double  -- ^ Default: 0.22
-                               , elemPartySpacing :: Double  -- ^ Default: 0
+                               , elemBuffScale :: Rational  -- ^ Default: 0.22
+                               , elemDebuffScale :: Rational  -- ^ Default: 0.22
+                               , elemPartySpacing :: Rational  -- ^ Default: 0
                                , elemShowOnlyCleansableDebuffs :: Bool -- ^ Default: False
-                               , elemOffset :: (Double, Double)
+                               , elemOffset :: (Rational, Rational)
                                }
-             | PhaseIndicator { elemScale :: Double  -- ^ Default: 1
-                              , elemOffset :: (Double, Double)
+             | PhaseIndicator { elemScale :: Rational  -- ^ Default: 1
+                              , elemOffset :: (Rational, Rational)
                               }
-             | PlayerBuffTray { elemScale :: Double  -- ^ Default: 1
-                              , elemIconScale :: Double  -- ^ Default: 0.6
+             | PlayerBuffTray { elemScale :: Rational  -- ^ Default: 1
+                              , elemIconScale :: Rational  -- ^ Default: 0.6
                               , elemNumPerRow :: Integer  -- ^ Default: 5
                               , elemExpandVertical :: ExpandVertical  -- ^ Default: ExpandUp
                               , elemExpandHorizontal :: ExpandHorizontal  -- ^ Default: ExpandRight
                               , elemBuffsSortType :: EffectSortType  -- ^ Default: ApplyTime
                               , elemShowPersonalHighlightBuffs :: Bool  -- ^ Default: False
-                              , elemPersonalHighlightBuffsMaxDuration :: Double  -- ^ Default: 300
+                              , elemPersonalHighlightBuffsMaxDuration :: Rational  -- ^ Default: 300
                               , elemShowPersonalBuffsFirst :: Bool  -- ^ Default: False
-                              , elemOffset :: (Double, Double)
+                              , elemOffset :: (Rational, Rational)
                               }
-             | PlayerCastbar { elemScale :: Double  -- ^ Default: 1
+             | PlayerCastbar { elemScale :: Rational  -- ^ Default: 1
                              , elemFlipHorizontal :: Bool  -- ^ Default: True
-                             , elemOffset :: (Double, Double)
+                             , elemOffset :: (Rational, Rational)
                              }
-             | PlayerDebuffTray { elemScale :: Double  -- ^ Default: 1
-                                , elemIconScale :: Double  -- ^ Default: 0.6
+             | PlayerDebuffTray { elemScale :: Rational  -- ^ Default: 1
+                                , elemIconScale :: Rational  -- ^ Default: 0.6
                                 , elemNumPerRow :: Integer  -- ^ Default: 5
                                 , elemExpandVertical :: ExpandVertical  -- ^ Default: ExpandUp
                                 , elemExpandHorizontal :: ExpandHorizontal  -- ^ Default: ExpandLeft
                                 , elemDebuffsSortType :: EffectSortType  -- ^ Default: ApplyTime
                                 , elemShowPersonalHighlightDebuffs :: Bool  -- ^ Default: False
-                                , elemPersonalHighlightDebuffsMaxDuration :: Double  -- ^ Default: 300
+                                , elemPersonalHighlightDebuffsMaxDuration :: Rational  -- ^ Default: 300
                                 , elemShowPersonalDebuffsFirst :: Bool  -- ^ Default: False
-                                , elemOffset :: (Double, Double)
+                                , elemOffset :: (Rational, Rational)
                                 }
-             | PlayerFrame { elemScale :: Double  -- ^ Default: 1
+             | PlayerFrame { elemScale :: Rational  -- ^ Default: 1
                            , elemFlipHorizontal :: Bool  -- ^ Default: False
                            , elemShowInfoText :: Bool  -- ^ Default: False
                            , elemEffectsOnBottom :: Bool  -- ^ Default: False
                            , elemShowRole :: Bool  -- ^ Default: True
-                           , elemOffset :: (Double, Double)
+                           , elemOffset :: (Rational, Rational)
                            }
-             | QuickBar1 { elemScale :: Double  -- ^ Default: 1
+             | QuickBar1 { elemScale :: Rational  -- ^ Default: 1
                          , elemNumVisible :: Integer -- ^ Default: 12
                          , elemNumPerRow :: Integer -- ^ Default: 12
                          , elemBGVisible :: Bool  -- ^ Default: True
-                         , elemOffset :: (Double, Double)
+                         , elemOffset :: (Rational, Rational)
                          }
-             | QuickBar2 { elemScale :: Double  -- ^ Default: 1
+             | QuickBar2 { elemScale :: Rational  -- ^ Default: 1
                          , elemNumVisible :: Integer -- ^ Default: 12
                          , elemNumPerRow :: Integer -- ^ Default: 12
                          , elemBGVisible :: Bool  -- ^ Default: True
-                         , elemOffset :: (Double, Double)
+                         , elemOffset :: (Rational, Rational)
                          }
-             | QuickBar3 { elemScale :: Double  -- ^ Default: 1
+             | QuickBar3 { elemScale :: Rational  -- ^ Default: 1
                          , elemNumVisible :: Integer -- ^ Default: 12
                          , elemNumPerRow :: Integer -- ^ Default: 12
                          , elemBGVisible :: Bool  -- ^ Default: True
-                         , elemOffset :: (Double, Double)
+                         , elemOffset :: (Rational, Rational)
                          }
-             | QuickBar4 { elemScale :: Double  -- ^ Default: 1
+             | QuickBar4 { elemScale :: Rational  -- ^ Default: 1
                          , elemNumVisible :: Integer -- ^ Default: 12
                          , elemNumPerRow :: Integer -- ^ Default: 12
                          , elemBGVisible :: Bool  -- ^ Default: True
-                         , elemOffset :: (Double, Double)
+                         , elemOffset :: (Rational, Rational)
                          }
-             | QuickBar5 { elemScale :: Double  -- ^ Default: 1
+             | QuickBar5 { elemScale :: Rational  -- ^ Default: 1
                          , elemNumVisible :: Integer -- ^ Default: 12
                          , elemNumPerRow :: Integer -- ^ Default: 12
                          , elemBGVisible :: Bool  -- ^ Default: True
-                         , elemOffset :: (Double, Double)
+                         , elemOffset :: (Rational, Rational)
                          }
-             | QuickBar6 { elemScale :: Double  -- ^ Default: 1
+             | QuickBar6 { elemScale :: Rational  -- ^ Default: 1
                          , elemNumVisible :: Integer -- ^ Default: 12
                          , elemNumPerRow :: Integer -- ^ Default: 12
                          , elemBGVisible :: Bool  -- ^ Default: True
-                         , elemOffset :: (Double, Double)
+                         , elemOffset :: (Rational, Rational)
                          }
-             | SocialCenter { elemScale :: Double  -- ^ Default: 1
-                            , elemOffset :: (Double, Double)
+             | SocialCenter { elemScale :: Rational  -- ^ Default: 1
+                            , elemOffset :: (Rational, Rational)
                             }
-             | SocialNotifications { elemScale :: Double  -- ^ Default: 1
-                                   , elemOffset :: (Double, Double)
+             | SocialNotifications { elemScale :: Rational  -- ^ Default: 1
+                                   , elemOffset :: (Rational, Rational)
                                    }
-             | SystemMessages { elemScale :: Double  -- ^ Default: 0.8
-                              , elemOffset :: (Double, Double)
+             | SystemMessages { elemScale :: Rational  -- ^ Default: 0.8
+                              , elemOffset :: (Rational, Rational)
                               }
-             | TargetCastbar { elemScale :: Double  -- ^ Default: 1
+             | TargetCastbar { elemScale :: Rational  -- ^ Default: 1
                              , elemFlipHorizontal :: Bool  -- ^ Default: False
-                             , elemOffset :: (Double, Double)
+                             , elemOffset :: (Rational, Rational)
                              }
-             | TargetFrame { elemScale :: Double  -- ^ Default: 1
+             | TargetFrame { elemScale :: Rational  -- ^ Default: 1
                            , elemFlipHorizontal :: Bool  -- ^ Default: True
                            , elemEffectsOnBottom :: Bool  -- ^ Default: False
                            , elemDisplayWithNoTarget :: Bool  -- ^ default: True
                            , elemShowInfoText :: Bool  -- ^ Default: False
                            , elemShowRole :: Bool  -- ^ Default: True
-                           , elemBuffScale :: Double  -- ^ Default: 0.6
-                           , elemDebuffScale :: Double  -- ^ Default: 0.6
+                           , elemBuffScale :: Rational  -- ^ Default: 0.6
+                           , elemDebuffScale :: Rational  -- ^ Default: 0.6
                            , elemShowPersonalHighlightBuffs :: Bool  -- ^ Default: False
-                           , elemPersonalHighlightBuffsMaxDuration :: Double  -- ^ Default: 300
+                           , elemPersonalHighlightBuffsMaxDuration :: Rational  -- ^ Default: 300
                            , elemShowPersonalHighlightDebuffs :: Bool  -- ^ Default: False
-                           , elemPersonalHighlightDebuffsMaxDuration :: Double -- ^ Default: 300
+                           , elemPersonalHighlightDebuffsMaxDuration :: Rational -- ^ Default: 300
                            , elemShowPersonalBuffsFirst :: Bool  -- ^ Default: False
                            , elemBuffsSortType :: EffectSortType  -- ^ Default: ApplyTime
                            , elemShowPersonalDebuffsFirst :: Bool  -- ^ Default: False
                            , elemDebuffsSortType :: EffectSortType  -- ^ Default: ApplyTime
-                           , elemOffset :: (Double, Double)
+                           , elemOffset :: (Rational, Rational)
                            }
-             | TargetOfTarget { elemScale :: Double  -- ^ Default: 1
+             | TargetOfTarget { elemScale :: Rational  -- ^ Default: 1
                               , elemFlipHorizontal :: Bool  -- ^ Default: True
                               , elemShowInfoText :: Bool  -- ^ Default: False
                               , elemEffectsOnBottom :: Bool  -- ^ Default: False
                               , elemShowRole :: Bool  -- ^ Default: True
-                              , elemBuffScale :: Double  -- ^ Default: 0.25
-                              , elemDebuffScale :: Double  -- ^ Default: 0.25
-                              , elemOffset :: (Double, Double)
+                              , elemBuffScale :: Rational  -- ^ Default: 0.25
+                              , elemDebuffScale :: Rational  -- ^ Default: 0.25
+                              , elemOffset :: (Rational, Rational)
                               }
-             | TargetOfTargetCastbar { elemScale :: Double -- ^ Default: 0.6
+             | TargetOfTargetCastbar { elemScale :: Rational -- ^ Default: 0.6
                                      , elemFlipHorizontal :: Bool  -- ^ Default: True
-                                     , elemOffset :: (Double, Double)
+                                     , elemOffset :: (Rational, Rational)
                                      }
-             | TemporaryAbilityBar { elemScale :: Double -- ^ Default: 1
-                                   , elemOffset :: (Double, Double)
+             | TemporaryAbilityBar { elemScale :: Rational -- ^ Default: 1
+                                   , elemOffset :: (Rational, Rational)
                                    }
-             | Tutorials { elemScale :: Double -- ^ Default: 1
-                         , elemOffset :: (Double, Double)
+             | Tutorials { elemScale :: Rational -- ^ Default: 1
+                         , elemOffset :: (Rational, Rational)
                          }
   deriving (Eq, Ord, Show, Read)
 
@@ -663,7 +663,7 @@ tutorials = Tutorials{ elemScale = 1
                      , elemOffset = (0,0)
                      }
 
-elementSize :: Element -> (Double, Double)
+elementSize :: Element -> (Rational, Rational)
 elementSize AchievementTracker{..} = scaleBy elemScale (258, elemHeight)
 elementSize CartelMarket{..} = scaleBy elemScale (90, 41)
 elementSize ChatPanel1{..} = elemSize
@@ -727,13 +727,13 @@ elementSize TargetOfTargetCastbar{..} = scaleBy elemScale (262, 30)
 elementSize TemporaryAbilityBar{..} = scaleBy elemScale (648, 66)
 elementSize Tutorials{..} = scaleBy elemScale (63, 60)
 
-quickBarSize :: Integer -> Double -> Integer -> Integer -> (Double, Double)
+quickBarSize :: Integer -> Rational -> Integer -> Integer -> (Rational, Rational)
 quickBarSize qbNumber scale numVisible numPerRow = scaleBy scale (w, h)
   where (cols, rows) = dimensions numVisible numPerRow
         w = (if qbNumber == 1 then 48 else 12) + 53 * fromInteger cols
         h = 13 + 53 * fromInteger rows
 
-scaleBy :: Double -> (Double, Double) -> (Double, Double)
+scaleBy :: Rational -> (Rational, Rational) -> (Rational, Rational)
 scaleBy scale (x, y) = (scale * x, scale * y)
 
 dimensions :: Integer -> Integer -> (Integer, Integer)
