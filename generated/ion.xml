@@ -838,7 +838,7 @@
         <TrayExpandsHorizontal Type="2" Value="1"/>
         <TrayExpandsVertical Type="2" Value="1"/>
         <TrayIconsScale Type="3" Value="0.6"/>
-        <TrayMaxColumns Type="3" Value="20.0"/>
+        <TrayMaxColumns Type="3" Value="15.0"/>
         <TrayPersonalHighlightMaxDuration Type="3" Value="300.0"/>
         <TrayShowPersonalEffectsFirst Type="2" Value="1"/>
         <TrayShowPersonalHighlight Type="2" Value="1"/>

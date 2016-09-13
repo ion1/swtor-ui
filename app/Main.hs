@@ -17,7 +17,7 @@ layout =
           [ (T <-> B) quickBar1{ elemNumPerRow = 6 }
             [ (TL <-> BL) playerFrame{ elemShowInfoText = True, elemOffset = (-125, 47) }
               [ (TL <-> BL) playerBuffTray{ elemIconScale = 0.6
-                                          , elemNumPerRow = 20
+                                          , elemNumPerRow = 15
                                           , elemBuffsSortType = ByTimeRemaining
                                           , elemShowPersonalHighlightBuffs = True
                                           , elemShowPersonalBuffsFirst = True
