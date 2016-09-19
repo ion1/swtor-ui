@@ -338,9 +338,9 @@
     </FlagshipCommandConsole>
     <FocusTarget>
         <BuffScale Type="3" Value="0.6"/>
-        <BuffsSortType Type="3" Value="2.0"/>
+        <BuffsSortType Type="3" Value="1.0"/>
         <DebuffScale Type="3" Value="0.8"/>
-        <DebuffsSortType Type="3" Value="2.0"/>
+        <DebuffsSortType Type="3" Value="1.0"/>
         <FlipHorizontal Type="2" Value="0"/>
         <PersonalHighlightBuffsMaxDuration Type="3" Value="300.0"/>
         <PersonalHighlightDebuffsMaxDuration Type="3" Value="300.0"/>
@@ -812,7 +812,7 @@
         <TrayPersonalHighlightMaxDuration Type="3" Value="300.0"/>
         <TrayShowPersonalEffectsFirst Type="2" Value="1"/>
         <TrayShowPersonalHighlight Type="2" Value="1"/>
-        <TraySortType Type="3" Value="2.0"/>
+        <TraySortType Type="3" Value="1.0"/>
         <alpha Type="3" Value="100.0"/>
         <anchorAlignment Type="3" Value="9.0"/>
         <anchorXOffset Type="3" Value="-403.5"/>
@@ -842,7 +842,7 @@
         <TrayPersonalHighlightMaxDuration Type="3" Value="300.0"/>
         <TrayShowPersonalEffectsFirst Type="2" Value="1"/>
         <TrayShowPersonalHighlight Type="2" Value="1"/>
-        <TraySortType Type="3" Value="2.0"/>
+        <TraySortType Type="3" Value="1.0"/>
         <alpha Type="3" Value="100.0"/>
         <anchorAlignment Type="3" Value="8.0"/>
         <anchorXOffset Type="3" Value="-464.2"/>
@@ -1116,9 +1116,9 @@
     </TargetOfTargetCastbar>
     <TargetPortrait>
         <BuffScale Type="3" Value="0.6"/>
-        <BuffsSortType Type="3" Value="2.0"/>
+        <BuffsSortType Type="3" Value="1.0"/>
         <DebuffScale Type="3" Value="0.8"/>
-        <DebuffsSortType Type="3" Value="2.0"/>
+        <DebuffsSortType Type="3" Value="1.0"/>
         <EffectsOnBottom Type="2" Value="0"/>
         <FlipHorizontal Type="2" Value="1"/>
         <PersonalHighlightBuffsMaxDuration Type="3" Value="300.0"/>

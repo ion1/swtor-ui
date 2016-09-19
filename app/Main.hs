@@ -8,6 +8,9 @@ main = do
   putStrLn ("Writing " ++ show profilePath)
   writeLayout profilePath layout
 
+effectSort :: EffectSortType
+effectSort = TotalDuration
+
 layout :: Layout
 layout =
   Screen globals{ globScale = 0.9 }
@@ -18,7 +21,7 @@ layout =
             [ (TL <-> BL) playerFrame{ elemShowInfoText = True, elemOffset = (-125, 47) }
               [ (TL <-> BL) playerBuffTray{ elemIconScale = 0.6
                                           , elemNumPerRow = 15
-                                          , elemBuffsSortType = ByTimeRemaining
+                                          , elemBuffsSortType = effectSort
                                           , elemShowPersonalHighlightBuffs = True
                                           , elemShowPersonalBuffsFirst = True
                                           , elemOffset = (118, 19)
@@ -37,9 +40,9 @@ layout =
                                      , elemShowPersonalHighlightBuffs = True
                                      , elemShowPersonalHighlightDebuffs = True
                                      , elemShowPersonalBuffsFirst = True
-                                     , elemBuffsSortType = ByTimeRemaining
+                                     , elemBuffsSortType = effectSort
                                      , elemShowPersonalDebuffsFirst = True
-                                     , elemDebuffsSortType = ByTimeRemaining
+                                     , elemDebuffsSortType = effectSort
                                      , elemOffset = (125, 47)
                                      }
               []
@@ -72,7 +75,7 @@ layout =
                                     , elemNumPerRow = 5
                                     , elemExpandVertical = ExpandDown
                                     , elemExpandHorizontal = ExpandRight
-                                    , elemDebuffsSortType = ByTimeRemaining
+                                    , elemDebuffsSortType = effectSort
                                     , elemShowPersonalHighlightDebuffs = True
                                     , elemShowPersonalDebuffsFirst = True
                                     , elemOffset = (0, 150)
@@ -92,9 +95,9 @@ layout =
                                , elemShowPersonalHighlightBuffs = True
                                , elemShowPersonalHighlightDebuffs = True
                                , elemShowPersonalBuffsFirst = True
-                               , elemBuffsSortType = ByTimeRemaining
+                               , elemBuffsSortType = effectSort
                                , elemShowPersonalDebuffsFirst = True
-                               , elemDebuffsSortType = ByTimeRemaining
+                               , elemDebuffsSortType = effectSort
                                }
         [ (TL <-> BL) groupFrame1{ elemScale = 1.25, elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 }
           [ (R <-> L) groupTargetFrame1{ elemScale = 1.0, elemShowInfoText = True, elemBuffScale = 0.4, elemDebuffScale = 0.5 } []
